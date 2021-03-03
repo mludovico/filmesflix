@@ -1,14 +1,13 @@
-package br.com.mludovico.filmesflix.view
+package br.com.mludovico.filmesflix.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.isNotEmpty
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.mludovico.filmesflix.R
-import br.com.mludovico.filmesflix.model.Movie
-import br.com.mludovico.filmesflix.viewmodel.MovieListViewModel
+import br.com.mludovico.filmesflix.domain.Movie
+import br.com.mludovico.filmesflix.framework.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObsever() {
         movieListViewModel.movieList.observe(this, { movieList ->
-            if (list.isNotEmpty()) {
+            if (movieList.isNotEmpty()) {
                 populateList(movieList)
                 loadingVisibility(false)
             }

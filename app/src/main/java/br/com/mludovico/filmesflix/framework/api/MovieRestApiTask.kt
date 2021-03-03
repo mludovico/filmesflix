@@ -1,6 +1,5 @@
-package br.com.mludovico.filmesflix.api
+package br.com.mludovico.filmesflix.framework.api
 
-import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

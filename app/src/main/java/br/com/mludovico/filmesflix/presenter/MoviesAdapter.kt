@@ -1,11 +1,11 @@
-package br.com.mludovico.filmesflix.view
+package br.com.mludovico.filmesflix.presenter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.mludovico.filmesflix.R
-import br.com.mludovico.filmesflix.model.Movie
+import br.com.mludovico.filmesflix.domain.Movie
 import coil.load
 import kotlinx.android.synthetic.main.movie_item.view.*
 

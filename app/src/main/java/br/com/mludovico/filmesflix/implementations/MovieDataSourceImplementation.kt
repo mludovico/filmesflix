@@ -1,10 +1,11 @@
-package br.com.mludovico.filmesflix.repository
+package br.com.mludovico.filmesflix.implementations
 
 import android.util.Log
-import br.com.mludovico.filmesflix.api.MovieRestApiTask
-import br.com.mludovico.filmesflix.model.Movie
+import br.com.mludovico.filmesflix.framework.api.MovieRestApiTask
+import br.com.mludovico.filmesflix.data.MovieDataSource
+import br.com.mludovico.filmesflix.domain.Movie
 
-class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
+class MovieDataSourceImplementation(private val movieRestApiTask: MovieRestApiTask): MovieDataSource {
 
     companion object {
         const val TAG = "MovieRepository"
@@ -12,7 +13,7 @@ class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
 
     private val movieList = arrayListOf<Movie>()
 
-    fun getAllMovies(): List<Movie> {
+    override fun getAllMovies(): List<Movie> {
         val request = movieRestApiTask.retrofitApi().getAllMovies().execute()
 
         if (request.isSuccessful) {
@@ -26,4 +27,5 @@ class MovieRepository(private val movieRestApiTask: MovieRestApiTask) {
         }
         return movieList
     }
+
 }

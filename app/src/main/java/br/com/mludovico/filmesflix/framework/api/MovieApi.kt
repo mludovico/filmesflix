@@ -1,6 +1,6 @@
-package br.com.mludovico.filmesflix.api
+package br.com.mludovico.filmesflix.framework.api
 
-import br.com.mludovico.filmesflix.model.Movie
+import br.com.mludovico.filmesflix.domain.Movie
 import retrofit2.Call
 import retrofit2.http.GET
 

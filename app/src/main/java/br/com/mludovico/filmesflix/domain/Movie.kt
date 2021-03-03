@@ -1,4 +1,4 @@
-package br.com.mludovico.filmesflix.model
+package br.com.mludovico.filmesflix.domain
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
